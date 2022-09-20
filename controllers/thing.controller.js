@@ -56,7 +56,7 @@ module.exports.updateThingById = async (req, res, next) => {
         const { body } = req;
         const {params: {idThing}} = req;
         const [thing] = await Thing.updateByPk(body, idThing);
-        if (!things) {
+        if (!thing) {
             return res.status(400).send();
         }
         return res.status(200).send(thing);
